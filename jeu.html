@@ -131,6 +131,25 @@
 		#fullscreen {
 			display: none;
 		}
+		
+		.star {
+  display: inline-block;
+  width: 50px;
+  height: 100px;
+  background-image: url("etoile.png");
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.star.active {
+  background-image: url("etoile-pleine.png");
+  width: 50px;
+  height: 50px;
+}
+
+		
+		
 	</style>
 
 </head>
@@ -165,7 +184,108 @@
 		
 	<button class="button" id="fullscreen-button">Zoomer dans le jeu</button>
 		
+		
+	<br>
+
+	<div class="rating">
+		<span class="star active" data-value="1"></span>
+		<span class="star" data-value="2"></span>
+		<span class="star" data-value="3"></span>
+		<span class="star" data-value="4"></span>
+		<span class="star" data-value="5"></span>
+	  </div>
+
+	<br><br><br><br><br><br><br>
+
+	</div>
+
+
+	<script>
+		const stars = document.querySelectorAll('.star');
+		const rating = document.querySelector('.rating');
+	  
+		stars.forEach(star => {
+		  star.addEventListener('click', function() {
+			// Réinitialiser les étoiles
+			stars.forEach(s => s.classList.remove('active'));
+	  
+			// Activer les étoiles sélectionnées
+			let value = this.getAttribute('data-value');
+			for (let i = 0; i < value; i++) {
+			  stars[i].classList.add('active');
+			}
+	  
+			// Enregistrer la note dans la base de données
+			// ...
+		  });
+		});
+	  </script>
 	
+	
+
+	
+<script>const stars = document.querySelectorAll(".star");
+
+stars.forEach((star) => {
+  star.addEventListener("click", () => {
+    star.classList.add("active");
+  });
+});</script>
+	
+	
+	
+	
+	
+	<script>
+		function toggleFullScreen() {
+			var doc = window.document;
+			var docEl = doc.documentElement;
+
+			var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+			var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+			if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+				requestFullScreen.call(docEl);
+			} else {
+				cancelFullScreen.call(doc);
+			}
+		}
+
+		document.addEventListener("fullscreenchange", function () {
+			if (!document.fullscreenElement) {
+				alert("Vous avez quitté le mode plein écran !");
+			}
+		});
+	</script>
+
+
+<script>
+	// Récupération de l'élément iframe et du bouton plein écran
+	var iframe = document.getElementById("my-iframe");
+	var button = document.getElementById("fullscreen-button");
+
+	// Fonction pour mettre l'iframe en plein écran
+	function enterFullscreen() {
+		if (iframe.requestFullscreen) {
+			iframe.requestFullscreen();
+		} else if (iframe.webkitRequestFullscreen) { /* Safari */
+			iframe.webkitRequestFullscreen();
+		} else if (iframe.msRequestFullscreen) { /* IE11 */
+			iframe.msRequestFullscreen();
+		}
+	}
+
+	// Ajout d'un écouteur d'événement sur le bouton plein écran
+	button.addEventListener("click", enterFullscreen);
+</script>
+
+
+
+
+</body>
+
+
+</html>
 	
 	<br><br><br><br><br><br><br>
 
