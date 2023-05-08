@@ -281,6 +281,23 @@
 		#fullscreen {
 			display: none;
 		}
+
+		.star {
+  display: inline-block;
+  width: 50px;
+  height: 100px;
+  background-image: url("etoile.png");
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.star.active {
+  background-image: url("etoile-pleine.png");
+  width: 50px;
+  height: 50px;
+}
+
 	</style>
 
 </head>
@@ -303,7 +320,7 @@
 				allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; keyboard-map *; focus-without-user-activation *; screen-wake-lock; clipboard-read; clipboard-write"
 				sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-presentation allow-scripts allow-same-origin allow-popups-to-escape-sandbox allow-downloads"
 				scrolling="no" allowfullscreen="" style="width:100%;height:100%"></iframe></h2>
-		<a href="/Gerranite.html"><button class="button">Go to Gerranite page</button></a>
+		<a href="http://gerraniumminecraft.000webhostapp.com/Gerranite.html"><button class="button">Go to Gerranite page</button></a>
 
 		<button onclick="toggleFullScreen()" class="button">Enable / Disable fullscreen blockage</button>
 
@@ -311,6 +328,53 @@
 		<a href="Langage.html"><button class="button">Langage</button></a>
 		<a href="index-English.html"><button class="button">Go to main page</button></a>
 		<button id="fullscreen-button" class="button">Zoom in the game</button>
+		
+		<br>
+
+		<div class="rating">
+			<span class="star active" data-value="1"></span>
+			<span class="star" data-value="2"></span>
+			<span class="star" data-value="3"></span>
+			<span class="star" data-value="4"></span>
+			<span class="star" data-value="5"></span>
+		  </div>
+	
+		<br><br><br><br><br><br><br>
+	
+		</div>
+	
+	
+		<script>
+			const stars = document.querySelectorAll('.star');
+			const rating = document.querySelector('.rating');
+		  
+			stars.forEach(star => {
+			  star.addEventListener('click', function() {
+				// Réinitialiser les étoiles
+				stars.forEach(s => s.classList.remove('active'));
+		  
+				// Activer les étoiles sélectionnées
+				let value = this.getAttribute('data-value');
+				for (let i = 0; i < value; i++) {
+				  stars[i].classList.add('active');
+				}
+		  
+				// Enregistrer la note dans la base de données
+				// ...
+			  });
+			});
+		  </script>
+		
+		
+	
+		
+	<script>const stars = document.querySelectorAll(".star");
+	
+	stars.forEach((star) => {
+	  star.addEventListener("click", () => {
+		star.classList.add("active");
+	  });
+	});</script>
 		
 
 		<br><br><br><br><br><br><br>
