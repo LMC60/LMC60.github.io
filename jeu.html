@@ -131,7 +131,7 @@
 		#fullscreen {
 			display: none;
 		}
-		
+
 		.star {
   display: inline-block;
   width: 50px;
@@ -148,8 +148,7 @@
   height: 50px;
 }
 
-		
-		
+
 	</style>
 
 </head>
@@ -172,7 +171,7 @@
 				allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; keyboard-map *; focus-without-user-activation *; screen-wake-lock; clipboard-read; clipboard-write"
 				sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-presentation allow-scripts allow-same-origin allow-popups-to-escape-sandbox allow-downloads"
 				scrolling="no" allowfullscreen="" style="width:100%;height:100%"></iframe></h2>
-		<a href="Gerranite.html"><button class="button">Aller sur la page
+		<a href="http://gerraniumminecraft.000webhostapp.com/Gerranite.html"><button class="button">Aller sur la page
 				Gerranite</button></a>
 
 		<button onclick="toggleFullScreen()" class="button">Activer / Désactiver le blocage en plein écran</button>
@@ -183,7 +182,6 @@
 		
 		
 	<button class="button" id="fullscreen-button">Zoomer dans le jeu</button>
-		
 		
 	<br>
 
@@ -231,73 +229,6 @@ stars.forEach((star) => {
     star.classList.add("active");
   });
 });</script>
-	
-	
-	
-	
-	
-	<script>
-		function toggleFullScreen() {
-			var doc = window.document;
-			var docEl = doc.documentElement;
-
-			var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-			var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
-
-			if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
-				requestFullScreen.call(docEl);
-			} else {
-				cancelFullScreen.call(doc);
-			}
-		}
-
-		document.addEventListener("fullscreenchange", function () {
-			if (!document.fullscreenElement) {
-				alert("Vous avez quitté le mode plein écran !");
-			}
-		});
-	</script>
-
-
-<script>
-	// Récupération de l'élément iframe et du bouton plein écran
-	var iframe = document.getElementById("my-iframe");
-	var button = document.getElementById("fullscreen-button");
-
-	// Fonction pour mettre l'iframe en plein écran
-	function enterFullscreen() {
-		if (iframe.requestFullscreen) {
-			iframe.requestFullscreen();
-		} else if (iframe.webkitRequestFullscreen) { /* Safari */
-			iframe.webkitRequestFullscreen();
-		} else if (iframe.msRequestFullscreen) { /* IE11 */
-			iframe.msRequestFullscreen();
-		}
-	}
-
-	// Ajout d'un écouteur d'événement sur le bouton plein écran
-	button.addEventListener("click", enterFullscreen);
-</script>
-
-
-
-
-</body>
-
-
-</html>
-	
-	<br><br><br><br><br><br><br>
-
-	</div>
-
-
-
-
-	
-
-	
-	
 	
 	
 	
