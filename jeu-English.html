@@ -131,156 +131,6 @@
 		#fullscreen {
 			display: none;
 		}
-	</style>
-
-</head>
-<img src="Titre.png" id="moving-image" height="">
-
-<body>
-
-	<br><br><br>
-
-
-
-	<div class="container">
-
-		
-
-
-
-		<!DOCTYPE html>
-<html>
-
-<head>
-	<title>Gerranium</title>
-	<style>
-		body,
-		html {
-			height: 100%;
-			margin: 0;
-			padding: 0;
-			background-color: #001d3f;
-			overflow: hidden;
-			background-image: url("ciel.jpg");
-		}
-
-		.container {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: flex-start;
-			height: 100%;
-			overflow: hidden;
-			background-color: #001d3f;
-			margin: 20px;
-			background-image: url("ciel.jpg");
-		}
-
-		.button {
-			background-color: #3c3f47;
-			border: none;
-			color: white;
-			padding: 15px 30px;
-			/* modification */
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 24px;
-			/* modification */
-			border-radius: 20px;
-			transition: all 0.75s ease-in-out;
-			margin: 10px;
-		}
-
-
-		.button2 {
-			background-color: #5100ad;
-			border: none;
-			color: white;
-			padding: 20px 40px;
-			/* modification */
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 30px;
-			/* modification */
-			border-radius: 20px;
-			transition: all 0.75s ease-in-out;
-			margin: 10px;
-
-		}
-
-		.button:hover {
-			transform: translateX(30px);
-			/* modification */
-			box-shadow: 5px 5px 10px rgba(112, 112, 112, 0.3);
-		}
-
-
-		.button2:hover {
-			transform: translateX(30px);
-			/* modification */
-			box-shadow: 5px 5px 10px rgba(112, 112, 112, 0.3);
-		}
-
-		.show {
-			display: block !important;
-		}
-
-		h1 {
-			position: absolute;
-			font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-			left: 900px;
-			/* position initiale à gauche */
-			top: 35%;
-			/* centré verticalement */
-			color: rgb(217, 224, 230);
-		}
-
-		#moving-image {
-			position: fixed;
-			left: -200px;
-			/* position initiale à gauche */
-			top: 10%;
-			/* centré verticalement */
-			transform: translateY(-50%);
-			animation-name: move-image;
-			animation-duration: 3s;
-			animation-timing-function: ease-in-out;
-			/* accélération et ralentissement */
-			animation-fill-mode: forwards;
-			/* image restera à la dernière position */
-
-		}
-
-		@keyframes move-image {
-			from {
-				left: -200px;
-				/* position initiale à gauche */
-			}
-
-			to {
-				left: 50%;
-				/* position finale au centre */
-				transform: translateX(-50%) translateY(-50%);
-			}
-		}
-
-		h2 {
-			position: absolute;
-			font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-			left: 850px;
-			/* position initiale à gauche */
-			top: 20%;
-			/* centré verticalement */
-			color: aliceblue;
-			height: 500px;
-			width: 900px;
-		}
-
-		#fullscreen {
-			display: none;
-		}
 
 		.star {
   display: inline-block;
@@ -298,6 +148,7 @@
   height: 50px;
 }
 
+
 	</style>
 
 </head>
@@ -315,76 +166,73 @@
 
 
 
-	<h2><iframe id="my-iframe"
+				<h2><iframe id="my-iframe"
 				src="https://games.gdevelop-app.com/game-d3036d9f-997e-412d-816f-415607660f31/index.html?userSlug=lmc60&amp;gameSlug=gerranite"
 				allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; keyboard-map *; focus-without-user-activation *; screen-wake-lock; clipboard-read; clipboard-write"
 				sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-presentation allow-scripts allow-same-origin allow-popups-to-escape-sandbox allow-downloads"
 				scrolling="no" allowfullscreen="" style="width:100%;height:100%"></iframe></h2>
-		<a href="http://gerraniumminecraft.000webhostapp.com/Gerranite.html"><button class="button">Go to Gerranite page</button></a>
+		<a href="Gerranite.html"><button class="button">Go to Gerranite Page</button></a>
 
 		<button onclick="toggleFullScreen()" class="button">Enable / Disable fullscreen blockage</button>
 
 
-		<a href="Langage.html"><button class="button">Langage</button></a>
-		<a href="index-English.html"><button class="button">Go to main page</button></a>
-		<button id="fullscreen-button" class="button">Zoom in the game</button>
-		
-		<br>
-
-		<div class="rating">
-			<span class="star active" data-value="1"></span>
-			<span class="star" data-value="2"></span>
-			<span class="star" data-value="3"></span>
-			<span class="star" data-value="4"></span>
-			<span class="star" data-value="5"></span>
-		  </div>
-	
-		<br><br><br><br><br><br><br>
-	
-		</div>
-	
-	
-		<script>
-			const stars = document.querySelectorAll('.star');
-			const rating = document.querySelector('.rating');
-		  
-			stars.forEach(star => {
-			  star.addEventListener('click', function() {
-				// Réinitialiser les étoiles
-				stars.forEach(s => s.classList.remove('active'));
-		  
-				// Activer les étoiles sélectionnées
-				let value = this.getAttribute('data-value');
-				for (let i = 0; i < value; i++) {
-				  stars[i].classList.add('active');
-				}
-		  
-				// Enregistrer la note dans la base de données
-				// ...
-			  });
-			});
-		  </script>
+		<a href="Langage-English.html"><button class="button">Langage</button></a>
+		<a href="index-English.html"><button class="button">Go to main screen</button></a>
 		
 		
-	
+	<button class="button" id="fullscreen-button">Zoom in the game</button>
 		
-	<script>const stars = document.querySelectorAll(".star");
-	
-	stars.forEach((star) => {
-	  star.addEventListener("click", () => {
-		star.classList.add("active");
-	  });
-	});</script>
-		
+	<br>
 
-		<br><br><br><br><br><br><br>
+	<div class="rating">
+		<span class="star active" data-value="1"></span>
+		<span class="star" data-value="2"></span>
+		<span class="star" data-value="3"></span>
+		<span class="star" data-value="4"></span>
+		<span class="star" data-value="5"></span>
+	  </div>
 
+	<br><br><br><br><br><br><br>
 
-	<div id="fullscreen">
-
-		<button onclick="exitFullscreen()">Quitter le mode plein écran</button>
 	</div>
 
+
+	<script>
+		const stars = document.querySelectorAll('.star');
+		const rating = document.querySelector('.rating');
+	  
+		stars.forEach(star => {
+		  star.addEventListener('click', function() {
+			// Réinitialiser les étoiles
+			stars.forEach(s => s.classList.remove('active'));
+	  
+			// Activer les étoiles sélectionnées
+			let value = this.getAttribute('data-value');
+			for (let i = 0; i < value; i++) {
+			  stars[i].classList.add('active');
+			}
+	  
+			// Enregistrer la note dans la base de données
+			// ...
+		  });
+		});
+	  </script>
+	
+	
+
+	
+<script>const stars = document.querySelectorAll(".star");
+
+stars.forEach((star) => {
+  star.addEventListener("click", () => {
+    star.classList.add("active");
+  });
+});</script>
+	
+	
+	
+	
+	
 	<script>
 		function toggleFullScreen() {
 			var doc = window.document;
@@ -430,13 +278,6 @@
 
 
 
-
-
-
-</body>
-
-
-</html>
 
 </body>
 
