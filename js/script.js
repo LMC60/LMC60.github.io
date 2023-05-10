@@ -3,8 +3,8 @@ var count = 0;
 function result(){
 	if(count != 0){
 		document.getElementById('result').innerHTML = 
-		"<h4>Rating: <label class='text-primary'>" + count + "</label></h4>"
-		+ "<h4>Review</h4>"
+		"<h4>Note : <label class='text-primary'>" + count + "</label></h4>"
+		+ "<h4>Critique :</h4>"
 		+ "<p>"+document.getElementById("review").value+"</p>";
 	}else{
 		
