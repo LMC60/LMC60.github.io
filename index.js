@@ -241,3 +241,14 @@ window.onload = () => {
     var audio = document.getElementById("audio-player");
     audio.play();
   }
+
+
+  var isImageChanged = false;
+
+  function changeImage() {
+    if (!isImageChanged) {
+      var image = document.getElementById('myImage');
+      image.src = 'ON.png';
+      isImageChanged = true;
+    }
+  }

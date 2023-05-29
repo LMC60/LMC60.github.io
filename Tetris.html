@@ -29,7 +29,10 @@
             </div> 
             <div id="lines-div">
                 <br>                <br>                <br>
-                <button onclick="playAudio()">Activer la musique</button>
+                <button class="custom-button" onclick="changeImage(),playAudio()" id="myButton">
+                    <img id="myImage" src="OFF.png" alt="OFF" style="width: 46px; height: 50px;">
+                  </button>
+                
                 <audio id="audio-player" style="display: none;" loop>
                   <source src="Musique.mp3" type="audio/mpeg">
                   Votre navigateur ne supporte pas la balise audio.
