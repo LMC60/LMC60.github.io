@@ -1,0 +1,51 @@
+<html>
+  
+<head>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="resources/logo.ico">
+<title>Tetris LMC</title>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="left-div">
+            <img src="resources/logo.png" id="logo">
+            <hr>
+            <br><br>
+            <div id="score-div">
+                <label> Score: </label>
+                <label id="score"></label>
+            </div>
+            <div id="lines-div">
+                <label> Lignes: </label>
+                <label id="lines"></label>
+            </div>
+            <br><br><br><br>
+            <div id="lines-div">
+                <label>Espace pour tourner </label>
+                
+            </div> 
+            <div id="lines-div">
+                <br>                <br>                <br>
+                <button onclick="playAudio()">Activer la musique</button>
+                <audio id="audio-player" style="display: none;" loop>
+                  <source src="Musique.mp3" type="audio/mpeg">
+                  Votre navigateur ne supporte pas la balise audio.
+                </audio>
+</div>
+        </div>
+        
+        <div id="game-container">
+            <img src="resources/background.png" id="background">
+            <canvas id="game-canvas"></canvas>
+        </div>
+    </div>
+    
+</body>
+
+
+<script src="index.js"></script>
+
+</html>
