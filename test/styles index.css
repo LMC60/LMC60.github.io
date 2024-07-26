@@ -1,0 +1,211 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url(Background.jpg);
+    background-size: cover;
+
+}
+
+h1 {
+    color: white;
+    padding: 15px 0;
+    margin: 0;
+    border-radius: 10px;
+}
+
+h2 {
+    color: white;
+    padding: 15px 0;
+    margin: 0;
+    border-radius: 10px;
+}
+
+#game-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 960px;
+    width: 100%; /* Ensures board takes full width */
+    height: 600px; /* Define a height for the board */
+    overflow: hidden; /* Hide any overflow */
+    position: relative; /* Establish a positioning context */
+    border: 3px solid #ddd; /* Border around the board */
+    background-image: url(plateau.png);
+    background-size: 5%;
+    border-radius: 15px; /* Rounded corners for the board */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for 3D effect */
+}
+
+.character {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid #ffee00;
+    border-radius: 20px; /* Rounded corners for characters */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.character img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px; /* Rounded corners for images */
+}
+
+.character.flipped {
+    transform: translateY(50px);
+    opacity: 0.3; /* Make the character case transparent when flipped */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow effect when flipped */
+}
+
+.character-name {
+    margin-top: 5px; /* Space between image and name */
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 0 0 8px 8px; /* Rounded corners at the bottom */
+}
+
+#controls {
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px 15px; /* Reduced padding for a smaller area */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%; /* Adjusted width for a smaller area */
+    max-width: 500px; /* Set a maximum width */
+    display: inline-block;
+}
+
+#question {
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+#response-buttons {
+    margin: 10px 0;
+}
+
+button {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 20px; /* Rounded edges */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+
+#refresh-btn {
+    background-color: #4CAF50; /* Green for Yes */
+}
+
+#refresh-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+#reset-btn {
+    background-color: #f44336; /* Red for No */
+}
+
+#reset-btn:hover {
+    background-color: #e53935; /* Darker red on hover */
+}
+
+#home-btn {
+    background-color: #2196F3; /* Blue for Send Question */
+}
+
+#home-btn {
+    background-color: #1976D2; /* Darker blue on hover */
+}
+
+#display-question {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #e0e0e0;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#display-response {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #e0e0e0;
+    padding: 10px;
+}
+
+img{
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#logo{
+    width: 15%;
+}
+
+#BTN {
+    background: none; /* Retire le fond par défaut du bouton */
+    background-image: url(Bouton1.webp);
+    width: 300px; /* Largeur du bouton */
+    height: 200px; /* Hauteur du bouton */
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir le bouton */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-position: center; /* Centre l'image dans le bouton */
+    border: none; /* Retire la bordure du bouton */
+    cursor: pointer; /* Change le curseur pour indiquer qu'il s'agit d'un bouton cliquable */
+ 
+}
+
+h3{
+    background-color: black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial,;
+    font-size: 23px;
+    user-select: none;
+}
+
+html{
+    user-select: none;
+}
+
+#Lien{
+    color: rgba(0, 191, 255, 0.750);
+}
+
+#Lien:active{
+    color: rgb(0, 191, 255, 0.750);
+}
+
+h4 {
+    color: rgba(211, 211, 211, 0.500);
+    padding: 15px 0;
+    margin: 0;
+    border-radius: 10px;
+}
